@@ -22,11 +22,172 @@
                     tax: 0.73,
                     quantity: 0
                 },
+                'pick_3': {
+                    price: 19.95,
+                    tax: 1.07
+                    quantity: 0
+                }
+                'indoor_unlimited': {
+                    price: 17.95,
+                    tax: 1.02,
+                    quantity: 0
+                }
+                'indoor_upgrade_adult': {
+                    price: 10.00,
+                    tax: .65,
+                    quantity: 0
+                }
+                'indoor_upgrade_junior': {
+                    price: 4.00,
+                    tax: .26,
+                    quantity: 0
+                }
+                'sizzling_sunday': {
+                    price: 11.99,
+                    tax: .78,
+                    quantity: 0
+                }
+                'twenty_five_for_twenty_game_card': {
+                    price: 20.00,
+                    tax: 0.00,
+                    quantity: 0
+                }
+                'fourty_for_twenty_game': {
+                    price: 20.00,
+                    tax: 0.00,
+                    quantity: 0
+                }
                 'game_card': {
                     price: 1,
                     tax: 0,
                     quantity: 0
                 }
+                'half_price_adult_unlimited': {
+                    price: 13.98,
+                    tax: .83,
+                    quantity: 0
+                }
+                'half_price_junior_unlimited': {
+                    price: 10.98,
+                    tax: .65,
+                    quantity: 0
+                }
+                'attraction_pass': {
+                    price: 6.50,
+                    tax: .44,
+                    quantity: 0
+                }
+                'passenger_pass': {
+                    price: 3.25,
+                    tax: .21,
+                    quantity: 0
+                }
+                'miniture_golf': {
+                    price: 7.50,
+                    tax: .51,
+                    quantity: 0
+                }
+                'miniture_golf_under_58_inches': {
+                    price: 5.00,
+                    tax: .33,
+                    quantity: 0
+                }
+                'kiddie_cove': {
+                    price: 3.25,
+                    tax: .21,
+                    quantity: 0
+                }
+                'batting_cage_24_pitch': {
+                    price: 2.00,
+                    tax: 0,
+                    quantity: 0
+                }
+                'batting_cage_half_hour': {
+                    price: 15.00,
+                    tax: .98,
+                    quantity: 0
+                }
+                'batting_cage_1_hour': {
+                    price: 25.00,
+                    tax: 1.63,
+                    quantity: 0
+                }
+                'roller_ball': {
+                    price: 3.00,
+                    tax: 0,
+                    quantity: 0
+                }
+                'wrist_coil': {
+                    price: 1.00,
+                    tax: .07,
+                    quantity: 0
+                }
+                'Lanyards': {
+                    price: 2.00,
+                    tax: .13,
+                    quantity: 0
+                }
+                'sunscreen': {
+                    price: 3.50,
+                    tax: .23,
+                    quantity: 0
+                }
+                'gloves': {
+                    price: 2.00,
+                    tax: .13,
+                    quantity: 0
+                }
+                'twelve_buck_tuesday_pass': {
+                    price: 12.00,
+                    tax: .59,
+                    quantity: 0
+                }
+                'nineteen_buck_tuesday_pass': {
+                    price: 19.00,
+                    tax: 1.08,
+                    quantity: 0
+                }
+                'tuesday_upgrade': {
+                    price: 7.00,
+                    tax: .46,
+                    quantity: 0
+                }
+                'buffet': {
+                    price: 8.00,
+                    tax: .60,
+                    quantity: 0
+                }
+                'two_dollars_off_jr_unlimited': {
+                    price: -2.00,
+                    tax: 0.00,
+                    quantity: 0
+                }
+                'four_dollars_off_unlimited': {
+                    price: -4.00,
+                    tax: -.26,
+                    quantity: 0
+                }
+                'three_dollars_off_jr_unlimited': {
+                    price: -3.00,
+                    tax: 0.00,
+                    quantity: 0
+                }
+                'five_dollars_off_unlimited': {
+                    price: -5.00,
+                    tax: 0.00,
+                    quantity: 0
+                }
+                'three_dollars_off_jr_unlimited_military': {
+                    price: -3.00,
+                    tax: -.20,
+                    quantity: 0
+                }
+                'five_dollars_off_unlimited_military': {
+                    price: -5.00,
+                    tax: -.33,
+                    quantity: 0
+                }
+
             },
             costs: {
                 total: 0,
@@ -48,7 +209,7 @@
         }
 
 
-        function caculatePrice(element, item_key) {
+        function calculatePrice(element, item_key) {
             var item = getItem(item_key);
             item.quantity = element.value;
             updatePrice();
@@ -131,6 +292,7 @@
             padding: 15px;
             margin: 0 5px 0 0;
         }
+
         .ticket-form div {
             display: inline-block;
             width: 250px;
@@ -138,10 +300,12 @@
             font-size: 18px;
             margin-right: 10px;
         }
+
         .ticket-form input {
             border: 2px solid #000;
             font-size: 18px;
         }
+
         .ticket-form label {
             display: block;
             margin-bottom: 10px;
@@ -165,18 +329,23 @@
             text-align: right;
             font-size: 18px;
         }
+
         .cash-form input {
             border: 2px solid #000;
             font-size: 18px;
         }
+
         .cash-form label {
             display: block;
             margin-bottom: 10px;
         }
+
         .cash-form input:disabled {
             background-color: #ddd;
         }
+
     </style>
+
 </head>
 <body onload="setup()">
     <div class="page-container">
@@ -185,6 +354,8 @@
                 <button class="menu-btn" onclick="toggleForm(&#39;fun_packs_form&#39;)">Fun Packs</button>
                 <button class="menu-btn" onclick="toggleForm(&#39;entitlements_form&#39;)">Entitlements</button>
                 <button class="menu-btn" onclick="toggleForm(&#39;merchandise_form&#39;)">Merchandise</button>
+                <button class="menu-btn" onclick="toggleForm(&#39;twelve_buck_tuesday&#39;)">12 Buck Tuesday</button>
+                <button class="menu-btn" onclick="toggleForm(&#39;coupons&#39;)">Coupons</button>
             </nav>
         </section>
         <section class="ticket-container" id="fun_packs_form" style="display: none;">
@@ -192,30 +363,168 @@
             <form class="ticket-form">
                 <label>
                     <div>Adult Unlimited</div>
-                    <input type="number" min="0" step="1" onblur="caculatePrice(this, &#39;adult_unlimited&#39;)">
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;adult_unlimited&#39;)">
                 </label>
                 <label>
                     <div>Junior Unlimited</div>
-                    <input type="number" min="0" step="1" onblur="caculatePrice(this, &#39;junior_unlimited&#39;)">
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;junior_unlimited&#39;)">
                 </label>
                 <label>
                     <div>Pick 2</div>
-                    <input type="number" min="0" step="1" onblur="caculatePrice(this, &#39;pick_2&#39;)">
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;pick_2&#39;)">
+                </label>
+                <label>
+                    <div>Pick 3</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;pick_3&#39;)">
+                </label>
+                <label>
+                    <div>Indoor Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;indoor_unlimited&#39;)">
+                </label>
+                <label>
+                    <div>Indoor Upgrade Adult</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;indoor_upgrade_adult&#39;)">
+                </label>
+                <label>
+                    <div>Indoor Upgrade Junior</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;indoor_upgrade_junior&#39;)">
+                </label>
+                <label>
+                    <div>Sizzling Sunday</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;sizzling_sunday&#39;)">
+                </label>
+                <label>
+                    <div>$25 for $20 game card</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;twenty_five_for_twenty_game_card&#39;)">
+                </label>
+                <label>
+                    <div>$40 for $20 game card</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;fourty_for_twenty_game&#39;)">
                 </label>
                 <label>
                     <div>Game Card</div>
-                    <input type="number" min="0" onblur="caculatePrice(this, &#39;game_card&#39;)" step="0.25">
+                    <input type="number" min="0" onblur="calculatePrice(this, &#39;game_card&#39;)" step="0.25">
+                </label>
+                <label>
+                    <div>Half Price Adult Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;half_price_adult_unlimited&#39;)">
+                </label>
+                <label>
+                    <div>Half Price Junior Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;half_price_junior_unlimited&#39;)">
                 </label>
             </form>
         </section>
         <section class="ticket-container" id="entitlements_form" style="display: none;">
             <h2>Entitlements</h2>
             <form class="ticket-form">
+                <label>
+                    <div>Attraction pass</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;attraction_pass&#39;)">
+                </label>
+                <label>
+                    <div>Passenger pass</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;passenger_pass&#39;)">
+                </label>
+                <label>
+                    <div>Miniture Golf</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;miniture_golf&#39;)">
+                </label>
+                <label>
+                    <div>Miniture Golf under 58"</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;miniture_golf_under_58_inches&#39;)">
+                </label>
+                <label>
+                    <div>Kiddie Cove</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;kiddie_cove&#39;)">
+                </label>
+                <label>
+                    <div>Batting Cage 24 pitch</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;batting_cage_24_pitch&#39;)">
+                </label>
+                <label>
+                    <div>Batting Cage 1/2 hour</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;batting_cage_half_hour&#39;)">
+                </label>
+                <label>
+                    <div>Batting Cage 1 hour</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;batting_cage_1_hour&#39;)">
+                </label>
+                <label>
+                    <div>Roller Ball</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;roller_ball&#39;)">
+                </label>
             </form>
         </section>
         <section class="ticket-container" id="merchandise_form" style="display: none;">
             <h2>Merchandise</h2>
             <form class="ticket-form">
+                <label>
+                    <div>Wrist Coil</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;wrist_coil&#39;)">
+                </label>
+                <label>
+                    <div>Lanyards</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;lanyards&#39;)">
+                </label>
+                <label>
+                    <div>Sunscreen</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;sunscreen&#39;)">
+                </label>
+                <label>
+                    <div>Gloves</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;gloves&#39;)">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="twelve_buck_tuesday_form" style="display: none;">
+            <h2>12 Buck Tuesday</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>12 Buck Tuesday</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;twelve_buck_tuesday_pass&#39;)">
+                </label>
+                <label>
+                    <div>19 Buck Tuesday w/karts</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;nineteen_buck_tuesday_pass&#39;)">
+                </label>
+                <label>
+                    <div>Tuesday upgrade</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;tuesday_upgrade&#39;)">
+                </label>
+                <label>
+                    <div>Buffet</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;buffet&#39;)">
+                </label>
+            </form>
+        </section>
+        <section class="ticket-container" id="coupons_form" style="display: none;">
+            <h2>Coupons</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>$2 Off Jr Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;two_dollars_off_jr_unlimited&#39;)">
+                </label>
+                <label>
+                    <div>$4 Off Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;four_dollars_off_unlimited&#39;)">
+                </label>
+                <label>
+                    <div>$3 Off Jr Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;three_dollars_off_jr_unlimited&#39;)">
+                </label>
+                <label>
+                    <div>$5 Off Unlimited</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;five_dollars_off_unlimited&#39;)">
+                </label>
+                <label>
+                    <div>$3 Off Jr Unlimited Military</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;three_dollars_off_jr_unlimited_military&#39;)">
+                </label>
+                <label>
+                    <div>$5 Off Unlimited Military</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, &#39;five_dollars_off_unlimited_military&#39;)">
+                </label>
             </form>
         </section>
 
