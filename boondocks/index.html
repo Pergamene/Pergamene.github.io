@@ -58,7 +58,7 @@
                     tax: 0.00,
                     quantity: 0
                 },
-                'game_card': {
+                'purchase_value': {
                     price: 1,
                     tax: 0,
                     quantity: 0
@@ -643,6 +643,128 @@
                     quantity: 0
                 },
                 // END GROUPS
+                // BIRTHDAY
+                'funtastic_birthday': {
+                    price: 13.95,
+                    tax: .75,
+                    quantity: 0
+                },
+                'funtastic_2': {
+                    price: 16.95,
+                    tax: .97,
+                    quantity: 0
+                },
+                'game_crazy_3_hour': {
+                    price: 20.95,
+                    tax: 1.02,
+                    quantity: 0
+                },
+                'game_crazy_all_day': {
+                    price: 25.95,
+                    tax: 1.37,
+                    quantity: 0
+                },
+                'rock_star_3_hour': {
+                    price: 20.95,
+                    tax: 1.29,
+                    quantity: 0
+                },
+                'rock_star_all_day': {
+                    price: 25.95,
+                    tax: 1.65,
+                    quantity: 0
+                },
+                'funtastic_birthday_entertainment_only': {
+                    price: 10.95,
+                    tax: .42,
+                    quantity: 0
+                },
+                'funtastic_2_entertainment_only': {
+                    price: 13.95,
+                    tax: .68,
+                    quantity: 0
+                },
+                'game_crazy_3_hour_entertainment_only': {
+                    price: 16.95,
+                    tax: .66,
+                    quantity: 0
+                },
+                'game_crazy_all_day_entertainment_only': {
+                    price: 21.95,
+                    tax: 1.03,
+                    quantity: 0
+                },
+                'rock_star_3_hour_entertainment_only': {
+                    price: 16.95,
+                    tax: .99,
+                    quantity: 0
+                },
+                'rock_star_all_day_entertainment_only': {
+                    price: 21.95,
+                    tax: 1.35,
+                    quantity: 0
+                },
+                'take_2_teen_party': {
+                    price: 19.95,
+                    tax: 1.19,
+                    quantity: 0
+                },
+                'game_on_teen_party_3_hour': {
+                    price: 23.95,
+                    tax: 1.23,
+                    quantity: 0
+                },
+                'game_on_teen_party_all_day': {
+                    price: 28.95,
+                    tax: 1.59,
+                    quantity: 0
+                },
+                'full_throttle_3_hour': {
+                    price: 23.95,
+                    tax: 1.50,
+                    quantity: 0
+                },
+                'full_throttle_all_day': {
+                    price: 28.95,
+                    tax: 1.86,
+                    quantity: 0
+                },
+                'large_pizza_birthday_deal': {
+                    price: 9.99,
+                    tax: .75,
+                    quantity: 0
+                },
+                'large_pizza_bday_deal_add_toppings': {
+                    price: 1.75,
+                    tax: .13,
+                    qauntity: 0
+                },
+                'large_pizza_bday_deal_add_half_topping': {
+                    price: .85,
+                    tax: .06,
+                    qauntity:0
+                },
+                'pizza_party_deal': {
+                    price: 17.49,
+                    tax: 1.31,
+                    quantity: 0
+                },
+                'pizza_party_deal_add_toppings': {
+                    price: 1.75,
+                    tax: .13,
+                    quantity: 0
+                },
+                'pizza_party_deal_add_half_topping': {
+                    price: .85,
+                    tax: .06,
+                    quantity: 0
+                },
+                'bday_pizza_meal_deal': {
+                    price: 3.95,
+                    tax: .30,
+                    quantity: 0
+                },
+                // END BIRTHDAY
                 // SNACK BAR
                 'snack_bar_slice_of_pepperoni_pizza': {
                     price: 3.75,
@@ -911,6 +1033,15 @@
                     ]
                 },
                 {
+                    id: "birthday_page",
+                    forms: [
+                        'birthday_packages_form',
+                        'entertainment_only_form',
+                        'teen_packages_form',
+                        'pizza_combos_form'
+                    ]
+                }
+                {
                     id: "snack_bar_page",
                     forms: [
                         'snack_bar_pizza_form',
@@ -1082,6 +1213,10 @@
             background-color: #FB83AD;
         }
 
+        .birthday-btn {
+            background-color: #FF9933;
+        }
+
         .snack_bar-btn {
             background-color: #F8A0F8;
         }
@@ -1137,6 +1272,7 @@
             <button class="ticket_sales-btn btn" onclick="togglePage('ticket_sales_page')">Ticket Sales</button>
             <button class="restaurant-btn btn" onclick="togglePage('restaurant_page')">Restaurant</button>
             <button class="groups-btn btn" onclick="togglePage('groups_page')">Groups</button>
+            <button class="birthday-btn btn" onclick="togglePage('birthday_page')">Birthday</button>
             <button class="snack_bar-btn btn" onclick="togglePage('snack_bar_page')">Snack Bar</button>
             <button class="bowling-btn btn" onclick="togglePage('bowling_page')">Bowling</button>
         </nav>
@@ -1199,8 +1335,8 @@
                     <input type="number" min="0" step="1" onblur="calculatePrice(this, 'fourty_for_twenty_game')">
                 </label>
                 <label>
-                    <div>Game Card</div>
-                    <input type="number" min="0" onblur="calculatePrice(this, 'game_card')" step="0.25">
+                    <div>Purchase Value</div>
+                    <input type="number" min="0" onblur="calculatePrice(this, 'purchase_value')" step="0.25">
                 </label>
                 <label>
                     <div>Half Price Adult Unlimited</div>
@@ -1743,6 +1879,141 @@
         </section>
     </div>
     <!-- END GROUPS -->
+
+
+    <!-- BIRTHDAY -->
+    <div class="page-container" id="birthday_page">
+        <h1>Birthday</h1>
+        <section>
+            <nav>
+                <button class="birthday-btn btn" onclick="toggleFomr('birthday_packages_form')">Birthday Packages</button>
+                <button class="birthday-btn btn" onclick="toggleFomr('entertainment_only_form')">Entertainment Only</button>
+                <button class="birthday-btn btn" onclick="toggleFomr('teen_packages_form')">Teen Packages</button>
+                <button class="birthday-btn btn" onclick="toggleFomr('pizza_combos_form')">Pizza Combos</button>
+            </nav>
+        </section>
+        <section class="ticket-container" id="birthday_packages_form">
+            <h2>Birthday Packages</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Funtastic Birthday</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'funtastic_birthday')">
+                </label>
+                <label>
+                    <div>Funtastix 2</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'funtastic_2')">
+                </label>
+                <label>
+                    <div>Game Crazy (3 Hour)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'game_crazy_3_hour')">
+                </label>
+                <label>
+                    <div>Game Crazy (All Day)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'game_crazy_all_day')">
+                </label>
+                <label>
+                    <div>Rock Star (3 Hour)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'rock_star_3_hour')">
+                </label>
+                <label>
+                    <div>Rock Star (All Day)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'rock_star_all_day')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT ($25)</h3>
+        </section>
+        <section class="ticket-container" id="entertainment_only_form">
+            <h2>Entertainment Only</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Funtastic Bday (entertainment only)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'funtastic_birthday_entertainment_only')">
+                </label>
+                <label>
+                    <div>Funtastic 2 (entertainment only</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'funtastic_2_entertainment_only')">
+                </label>
+                <label>
+                    <div>Game Crazy 3 Hour (entertainment only)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'game_crazy_3_hour_entertainment_only')">
+                </label>
+                <label>
+                    <div>Game Crazy All Day (entertainment only)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'game_crazy_all_day_entertainment_only')">
+                </label>
+                <label>
+                    <div>Rock Star 3 Hour (entertainment only)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'rock_star_3_hour_entertainment_only')">
+                </label>
+                <label>
+                    <div>Rock Star All Day (entertainment only)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'rock_star_all_day_entertainment_only')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT ($25)</h3>
+        </section>
+        <section class="ticket-container" id="teen_packages_form">
+            <h2>Teen Packages</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Take 2 Teen Party</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'take_2_teen_party')">
+                </label>
+                <label>
+                    <div>Game On Teen Party (3 Hour)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'game_on_teen_party_3_hour')">
+                </label>
+                <label>
+                    <div>Game On Teen Party (All Day)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'game_on_teen_party_all_day')">
+                </label>
+                <label>
+                    <div>Full Throttle Teen Party (3 Hour)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'full_throttle_3_hour')">
+                </label>
+                <label>
+                    <div>Full Throttle Teen Party (All Day)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'full_throttle_all_day')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT ($25)</h3>
+        </section>
+        <section class="ticket-container" id="pizza_combos_form">
+            <h2>Pizza Combos</h2>
+            <form class="ticket-form">
+                <label>
+                    <div>Large Pizza (Bday Deal)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'large_pizza_birthday_deal')">
+                </label>
+                <label>
+                    <div>Additional Toppings (Bday Deal)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'large_pizza_bday_deal_add_toppings')">
+                </label>
+                <label>
+                    <div>Add Half Topping (Bday Deal)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'large_pizza_bday_deal_add_half_topping')">
+                </label>
+                <label>
+                    <div>Pizza Party Deal</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'pizza_party_deal')">
+                </label>
+                <label>
+                    <div>Additional Toppings (Party Deal)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'pizza_party_deal_add_toppings')">
+                </label>
+                <label>
+                    <div>Add Half Topping (Party Deal)</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'pizza_party_deal_add_half_topping')">
+                </label>
+                <label>
+                    <div>B-Day Pizza Meal Deal</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'bday_pizza_meal_deal')">
+                </label>
+            </form>
+            <h3>DON'T FORGET THE DEPOSIT ($25)</h3>
+        </section>
+    </div>
+    <!-- END BIRTHDAY -->
 
 
     <!-- SNACK BAR -->
