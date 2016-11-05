@@ -622,6 +622,11 @@
                     tax: 5.76,
                     quantity: 0
                 },
+                'group_attraction_pass': {
+                    price: 5.00,
+                    tax: 6.75,
+                    quantity: 0 
+                },
                 'may_madness_basic': {
                     price: 8.95,
                     tax: 6.5,
@@ -1853,6 +1858,10 @@
                 <label>
                     <div>All Day Junior Indoor Unlimited</div>
                     <input type="number" min="0" step="1" onblur="calculatePrice(this,'all_day_junior_indoor_unlimited')">
+                </label>
+                <label>
+                    <div>Attraction Pass</div>
+                    <input type="number" min="0" step="1" onblur="calculatePrice(this, 'group_attraction_pass')">
                 </label>
             </form>
         </section>
