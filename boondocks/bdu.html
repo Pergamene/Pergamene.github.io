@@ -315,7 +315,7 @@
                     tax: 7.85,
                     quantity: 0
                 },
-                'add_toppings_speicalty_large_pizza': {
+                'add_toppings_specialty_large_pizza': {
                     price: 1.75,
                     tax: 7.85,
                     quantity: 0
@@ -510,6 +510,11 @@
                     tax: 7.85,
                     quantity: 0
                 },
+                '2lb_bucket_of_fries': {
+                    price: 6.99,
+                    tax: 7.85,
+                    quantity: 0
+                },
                 'chicken_tenders': {
                     price: 8.99,
                     tax: 7.85,
@@ -525,7 +530,7 @@
                     tax: 7.85,
                     quantity: 0
                 },
-                'sampler': {
+                'sampler_platter': {
                     price: 16.99,
                     tax: 7.85,
                     quantity: 0
@@ -602,7 +607,7 @@
                     tax: 4.80,
                     quantity: 0
                 },
-                'all_day_adult_unlimited': {
+                'all_day_unlimited': {
                     price: 21.95,
                     tax: 6.21,
                     quantity: 0
@@ -622,7 +627,7 @@
                     tax: 5.75,
                     quantity: 0
                 }, 
-                'attraction_pass': {
+                'group_attraction_pass': {
                     price: 5.00,
                     tax: 6.85,
                     quantity: 0
@@ -642,7 +647,7 @@
                     tax: 5.85,
                     quantity: 0
                 },
-                'may_madness_all_day': {
+                'may_madness_all_day_upgrade': {
                     price: 5.00,
                     tax: 6.17,
                     quantity: 0
@@ -781,7 +786,7 @@
                     tax: 7.85,
                     quantity: 0
                 },
-                'snack_bar_slice_of_peperoni_pizza': {
+                'snack_bar_slice_of_pepperoni_pizza': {
                     price: 3.75,
                     tax: 7.85,
                     quantity: 0
@@ -897,7 +902,7 @@
                     quantity: 0
                 },
                 'snack_bar_kickstart': {
-                    price: ,
+                    price: 2.50,
                     tax: 7.85,
                     quantity: 0
                 },
@@ -1305,7 +1310,7 @@
                 </label>
                 <label>
                     <div>Purchase Value</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'purchase_value')">
+                    <input type="number" min="0" autocomplete="off" onblur="calculatePrice(this, 'purchase_value')" step="0.25">
                 </label>
                 <label>
                     <div>Half Price Adult Unlimited</div>
@@ -1330,7 +1335,7 @@
                 </label>
                 <label>
                     <div>Sunscreen</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'sunscreen')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'sun_screen')">
                 </label>
                 <label>
                     <div>Gloves</div>
@@ -1364,27 +1369,27 @@
             <form class="ticket-form">
                 <label>
                     <div>$2 Off Jr Unlimited</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'two_dollars_off_jr_unlimited')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'two_dollars_off_junior_unlimited')">
                 </label>
                 <label>
                     <div>$4 Off Unlimited</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'four_dollars_off_unlimited')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'four_dollars_off_adult_unlimited')">
                 </label>
                 <label>
                     <div>$3 Off Jr Unlimited</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'three_dollars_off_jr_unlimited')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'three_dollars_off_junior_unlimited')">
                 </label>
                 <label>
                     <div>$5 Off Unlimited</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'five_dollars_off_unlimited')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'five_dollars_off_adult_unlimited')">
                 </label>
                 <label>
                     <div>$3 Off Jr Unlimited Military</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'three_dollars_off_jr_unlimited_military')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'three_dollars_off_junior_unlimited_military')">
                 </label>
                 <label>
                     <div>$5 Off Unlimited Military</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'five_dollars_off_unlimited_military')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'five_dollars_off_adult_unlimited_military')">
                 </label>
             </form>
         </section>
@@ -1449,7 +1454,7 @@
                 </label>
                 <label>
                     <div>Add Toppings (Large)</div>
-                    <input type="number" min="0" step="1" autocomplete="off" ="calculatePrice(this,'add_toppings_large_pizza')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'add_toppings_large_pizza')">
                 </label>
                 <label>
                     <div>Add 1/2 Toppings (Large)</div>
@@ -1495,7 +1500,7 @@
                 </label>
                 <label>
                     <div>Large Specialty Pizza</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'speicalty_large_pizza')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'specialty_large_pizza')">
                 </label>
                 <label>
                     <div>Large Specialty Pizza Combo</div>
@@ -1559,7 +1564,7 @@
                 </label>
                 <label>
                     <div>Chicken Caesar Salad</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chicken_caesar_salad')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'caesar_chicken_salad')">
                 </label>
                 <label>
                     <div>Oriental Chicken Salad</div>
@@ -1665,7 +1670,7 @@
                 </label>
                 <label>
                     <div>Onion Rings</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'onion_rings')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'onion_ring_tower')">
                 </label>
                 <label>
                     <div>Mozzarella Sticks</div>
@@ -1698,10 +1703,6 @@
                 <label>
                     <div>Appetizer Combo</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'appetizer_combo')">
-                </label>
-                <label>
-                    <div>Breadsticks and 4 Sodas</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'breadsticks_and_4_sodas')">
                 </label>
                 <h3>Drinks</h3>
                 <label>
@@ -1909,11 +1910,11 @@
                 </label>
                 <label>
                     <div>Full Throttle Teen Party (3 hr)</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'full_throttle_3_hour')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'full_throttle_teen_party_3_hour')">
                 </label>
                 <label>
                     <div>Full Throttle Teen Party (All day)</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'full_throttle_all_day')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'full_throttle_teen_party_all_day')">
                 </label>
             </form>
             <h3>DON'T FORGET THE DEPOSIT</h3>
@@ -1931,7 +1932,7 @@
                 </label>
                 <label>
                     <div>Add 1/2 Toppings (Bday deal)</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_bday_deal_add_half_topping')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_bday_deal_add_half_toppings')">
                 </label>
                 <label>
                     <div>Pizza Party Deal</div>
@@ -1943,7 +1944,7 @@
                 </label>
                 <label>
                     <div>Add 1/2 Toppings (Party deal)</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_party_deal_add_half_topping')">
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'pizza_party_deal_add_half_toppings')">
                 </label>
                 <label>
                     <div>B-Day Pizza Meal Deal</div>
