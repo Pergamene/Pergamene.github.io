@@ -158,11 +158,6 @@
                     tax: 4.77,
                     quantity: 0
                 },
-                'buffet': {
-                    price: 8.00,
-                    tax: 7.85,
-                    quantity: 0
-                },
                 'two_dollars_off_junior_unlimited': {
                     price: -2.00,
                     tax: 0,
@@ -510,11 +505,6 @@
                     tax: 7.85,
                     quantity: 0
                 },
-                '2lb_bucket_of_fries': {
-                    price: 6.99,
-                    tax: 7.85,
-                    quantity: 0
-                },
                 'chicken_tenders': {
                     price: 8.99,
                     tax: 7.85,
@@ -818,17 +808,17 @@
                 },
                 'snack_bar_candy_small': {
                     price: 1.50,
-                    tax: 7.85,
+                    tax: 0,
                     quantity: 0
                 },
                 'snack_bar_candy_medium': {
                     price: 2.00,
-                    tax: 7.85,
+                    tax: 0,
                     quantity: 0
                 },
                 'snack_bar_candy_large': {
                     price: 3.00,
-                    tax: 7.85,
+                    tax: 0,
                     quantity: 0
                 },
                 'snack_bar_formula_sour': {
@@ -892,11 +882,6 @@
                     quantity: 0
                 },
                 'snack_bar_bottled_watter': {
-                    price: 2.00,
-                    tax: 7.85,
-                    quantity: 0
-                },
-                'snack_bar_milk': {
                     price: 2.00,
                     tax: 7.85,
                     quantity: 0
@@ -1358,10 +1343,6 @@
                     <div>Tuesday upgrade</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'tuesday_upgrade')">
                 </label>
-                <label>
-                    <div>Buffet</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this, 'buffet')">
-                </label>
             </form>
         </section>
         <section class="ticket-container" id="coupons_form">
@@ -1405,7 +1386,7 @@
                 <button class="restaurant-btn btn" onclick="toggleForm('pizza_form')">Pizza</button>
                 <button class="restaurant-btn btn" onclick="toggleForm('specialty_pizza_form')">Specialty Pizza</button>
                 <button class="restaurant-btn btn" onclick="toggleForm('salads_sandwiches_wraps_form')">Salads Sandwiches Wraps</button>
-                <button class="restaurant-btn btn" onclick="toggleForm('kids_meals_deserts_form')">Kids Meals Deserts</button>
+                <button class="restaurant-btn btn" onclick="toggleForm('kids_meals_deserts_form')">Kids Meals Desserts</button>
                 <button class="restaurant-btn btn" onclick="toggleForm('appetizers_drinks_form')">Appetizers Drinks</button>
             </nav>
         </section>
@@ -1598,7 +1579,7 @@
             </form>
         </section>
         <section class="ticket-container" id="kids_meals_deserts_form">
-            <h2>Kids Meals Deserts</h2>
+            <h2>Kids Meals Desserts</h2>
             <form class="ticket-form">
                 <h3>Kids Meals</h3>
                 <label>
@@ -1625,13 +1606,13 @@
                     <div>Grilled Cheese</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'grilled_cheese')">
                 </label>
-                <h3>Deserts</h3>
+                <h3>Desserts</h3>
                 <label>
-                    <div>Build Your Own Sunday</div>
+                    <div>Build Your Own Sundae</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'build_your_own_sunday')">
                 </label>
                 <label>
-                    <div>Brownie Sunday</div>
+                    <div>Brownie Sundae</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'brownie_sunday')">
                 </label>
                 <label>
@@ -1645,10 +1626,6 @@
                 <label>
                     <div>Root Beer Float</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'root_beer_float')">
-                </label>
-                <label>
-                    <div>Oreo Churros</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'oreo_churros')">
                 </label>
             </form>
         </section>
@@ -1679,10 +1656,6 @@
                 <label>
                     <div>Chicken Quesadilla</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'chicken_quesadilla')">
-                </label>
-                <label>
-                    <div>2lb Bucket of Fries</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'2lb_bucket_of_fries')">
                 </label>
                 <label>
                     <div>Chicken Tenders</div>
@@ -1786,10 +1759,6 @@
                 <label>
                     <div>All Day Indoor Unlimited</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'all_day_indoor_unlimited')">
-                </label>
-                <label>
-                    <div>All Day Junior Indoor Unlimited</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'all_day_junior_indoor_unlimited')">
                 </label>
                 <label>
                     <div>Attraction Pass</div>
@@ -2021,10 +1990,6 @@
                     <div>Candy - Large</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_candy_large')">
                 </label>
-                <label>
-                    <div>Formula Sour</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_formula_sour')">
-                </label>
                 <h3>Ice Cream</h3>
                 <label>
                     <div>Single Scoop</div>
@@ -2064,11 +2029,11 @@
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_soda_large')">
                 </label>
                 <label>
-                    <div>ICEE - Medium</div>
+                    <div>Frozen Drink - Medium</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_icee_medium')">
                 </label>
                 <label>
-                    <div>ICEE - Large</div>
+                    <div>Frozen Drink - Large</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_icee_large')">
                 </label>
                 <label>
@@ -2080,16 +2045,28 @@
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_bottled_watter')">
                 </label>
                 <label>
-                    <div>Milk</div>
-                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_milk')">
-                </label>
-                <label>
                     <div>Kickstart</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_kickstart')">
                 </label>
                 <label>
                     <div>Amp - Rockstar</div>
                     <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_amp_rockstar')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle w/Soda</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_with_soda')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle Refill w/Soda</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_soda_refill')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle w/Frozen Drink</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_with_frozen_drink')">
+                </label>
+                <label>
+                    <div>Souvenir Bottle Refill w/Frozen</div>
+                    <input type="number" min="0" step="1" autocomplete="off" onblur="calculatePrice(this,'snack_bar_souvenir_bottle_frozen_drink_refill')">
                 </label>
             </form>
         </section>
